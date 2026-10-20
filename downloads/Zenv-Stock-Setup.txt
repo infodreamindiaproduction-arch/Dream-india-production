@@ -1,0 +1,12 @@
+ZENV — 100 DEMO UNITS PER PRODUCT
+
+All ten sample products in this CSV have quantity 100, inventory tracked by Shopify, overselling denied, status active and Published TRUE. Image URLs are populated. These are user-requested DEMO quantities, not verified physical inventory.
+
+1. Update the theme using Zenv-Shopify-Theme-v4.zip for Add to Cart and Buy Now.
+2. Extract Zenv-Products-Stock-100.zip and import its CSV under Shopify > Products > Import.
+3. If these same demo handles already exist, enable the overwrite matching handles option. The CSV replaces their sample fields, so keep any real edits you want to preserve before importing.
+4. Check product availability on the Online Store sales channel.
+5. Shopify product CSV quantity applies to single-location stores. If your store has multiple locations, or existing quantities are not updated by product import, use Products > Inventory, select the correct location and set the ten demo products' available quantities to 100 there. The theme cannot change Shopify inventory or bypass unavailable stock.
+6. Replace these sample quantities with real available stock before selling real products.
+
+Buttons remain disabled if Shopify reports the selected variant unavailable. Preview checkout is simulated; actual checkout requires your store payment and shipping setup.
