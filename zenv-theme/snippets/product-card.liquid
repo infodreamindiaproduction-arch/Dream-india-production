@@ -1,1 +1,12 @@
-<article class="product-card" data-category="{{ product.type | downcase | escape }}"><div class="product-image"><a href="{{ product.url }}">{% render 'product-media', product: product %}</a>{% if product.compare_at_price > product.price %}<span class="badge">BEAUTY DEAL</span>{% endif %}{% if product.available and product.has_only_default_variant %}<button class="quick" data-add data-id="{{ product.selected_or_first_available_variant.id }}">ADD TO BAG +</button>{% elsif product.available %}<a class="quick" style="text-align:center" href="{{ product.url }}">CHOOSE YOUR SHADE ↗</a>{% else %}<span class="quick" style="text-align:center">SOLD OUT</span>{% endif %}</div><div class="product-info"><h3><a href="{{ product.url }}">{{ product.title | escape }}</a></h3><p>{{ product.type | escape }}</p><div class="price">{{ product.price | money }} {% if product.compare_at_price > product.price %}<s>{{ product.compare_at_price | money }}</s>{% endif %}</div></div></article>
+<article class="product-card" data-category="{{ product.type | downcase | escape }}">
+  <div class="product-image"><a href="{{ product.url }}">{% render 'product-media', product: product %}</a>{% if product.compare_at_price > product.price %}<span class="badge">BEAUTY DEAL</span>{% endif %}</div>
+  <div class="product-info"><h3><a href="{{ product.url }}">{{ product.title | escape }}</a></h3><p>{{ product.type | escape }}</p><div class="price">{{ product.price | money }}{% if product.compare_at_price > product.price %} <s>{{ product.compare_at_price | money }}</s>{% endif %}</div>
+    {% if product.available and product.has_only_default_variant and product.requires_selling_plan == false %}
+      <form class="card-actions" action="{{ routes.cart_add_url }}" method="post"><input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}"><input type="hidden" name="quantity" value="1"><button class="button light" type="submit" data-add data-id="{{ product.selected_or_first_available_variant.id }}">ADD TO CART</button><button class="button" type="submit" name="return_to" value="{{ routes.root_url }}checkout">BUY NOW</button></form>
+    {% elsif product.available %}
+      <div class="card-actions"><a class="button light" href="{{ product.url }}">CHOOSE OPTIONS</a><a class="button" href="{{ product.url }}">BUY NOW</a></div>
+    {% else %}
+      <div class="card-actions"><button class="button light" disabled>ADD TO CART</button><button class="button" disabled>BUY NOW</button></div><p class="stock-note">Currently out of stock</p>
+    {% endif %}
+  </div>
+</article>

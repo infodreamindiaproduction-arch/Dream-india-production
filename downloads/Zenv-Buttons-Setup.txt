@@ -1,0 +1,17 @@
+ZENV — ADD TO CART + BUY NOW UPDATE
+
+1. Upload Zenv-Shopify-Theme-v4.zip in Shopify > Online Store > Themes > Import theme.
+2. Preview the new theme, then publish it when satisfied. Existing product CSV alone does not update theme buttons.
+3. Imported demo CSV entries have ZERO stock. In Shopify > Products > Inventory set the real available quantity for each sellable product and check availability on the Online Store channel.
+
+Available default-variant product cards now show Add to Cart and Buy Now.
+Products with multiple variants link to the product page so the buyer can select the correct option.
+Product pages have both buttons; a selected unavailable variant disables purchase.
+Out-of-stock products show disabled Add to Cart and Buy Now with an out-of-stock notice.
+Unimported sample concepts show disabled purchase buttons until a real catalogue product exists.
+Do not invent real inventory just to activate checkout.
+
+Add to Cart uses the Shopify cart API, with native form fallback when JavaScript is unavailable.
+Buy Now uses the native product form and return_to checkout, respecting the selected variant and quantity.
+Standalone preview has simulated cart and simulated Buy Now; no payments/orders are submitted.
+Theme Check and local browser checks were run. Live Shopify checkout needs verification in your store.

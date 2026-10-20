@@ -13,3 +13,5 @@
 @media(max-width:600px){.products{gap:22px 12px}.quick{font-size:8px;padding:9px;bottom:7px;left:7px;right:7px}.product-info{padding:10px 0}.product-info p{line-height:1.5}.badge{font-size:6px;padding:5px 6px;max-width:calc(100% - 16px)}}
 
 .product-description{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}.product-description summary{cursor:pointer;font-size:10px;color:var(--berry);list-style:none}.product-description[open] summary{margin-bottom:10px}.product-description p{font-size:11px;line-height:1.8;color:#755e67;margin:8px 0}.demo-footnote{font-size:10px;color:#877079;line-height:1.7;margin-top:25px}.product-info>p{min-height:16px}.category-img img{height:100%;object-fit:cover}
+
+.card-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:14px 0 6px}.card-actions .button{font-size:9px;letter-spacing:.6px;padding:12px 6px;gap:0;min-height:40px;white-space:normal;text-align:center}.card-actions .button:disabled{opacity:.45}.product-detail .button+.button{margin-top:10px}@media(max-width:600px){.card-actions{gap:5px}.card-actions .button{font-size:8px;padding:11px 4px;letter-spacing:.2px}}
