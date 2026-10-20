@@ -21,7 +21,7 @@ SHOPIFY INSTALLATION
 2. Open Customize / Preview. The ten sample product cards appear automatically until you select a real collection.
 3. To create actual Shopify catalogue entries, use Products > Import > Zenv-10-Products.csv.
    Theme ZIP installation alone does not create Shopify product records.
-4. The CSV creates ACTIVE sample entries with ZERO stock and deny-overselling, so they show Sold out.
+4. The current CSV creates ACTIVE sample entries with 100 demo units each and deny-overselling, as requested. Confirm actual availability in Shopify after import; see Zenv-Stock-Setup.txt for multiple-location stores.
    Check product availability on the Online Store sales channel after import.
    Sample products are for design preview; replace them with your real products before selling.
 5. The corrected CSV supplies a public HTTPS PNG image URL, Image Position 1 and image alt text

@@ -2,7 +2,7 @@ ZENV — ADD TO CART + BUY NOW UPDATE
 
 1. Upload Zenv-Shopify-Theme-v4.zip in Shopify > Online Store > Themes > Import theme.
 2. Preview the new theme, then publish it when satisfied. Existing product CSV alone does not update theme buttons.
-3. Imported demo CSV entries have ZERO stock. In Shopify > Products > Inventory set the real available quantity for each sellable product and check availability on the Online Store channel.
+3. Older CSV versions had ZERO stock. The latest Zenv-Products-Stock-100.csv sets 100 demo units each as requested. In Shopify > Products > Inventory set the real available quantity for each sellable product and check availability on the Online Store channel.
 
 Available default-variant product cards now show Add to Cart and Buy Now.
 Products with multiple variants link to the product page so the buyer can select the correct option.
