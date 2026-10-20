@@ -24,13 +24,11 @@ SHOPIFY INSTALLATION
 4. The CSV creates ACTIVE sample entries with ZERO stock and deny-overselling, so they show Sold out.
    Check product availability on the Online Store sales channel after import.
    Sample products are for design preview; replace them with your real products before selling.
-5. Keep the demo handles unchanged while using the sample images. For these ten handles, this theme
-   automatically displays the bundled PNG if no real Shopify product image has been uploaded.
-   This works on homepage cards, collection cards, product pages and cart fallback images.
-6. Image Src is intentionally blank in the CSV: Shopify CSV cannot import images from a local ZIP or
-   filesystem path. The included theme supplies the fallback images, so public image hosting is not needed.
-   Shopify Admin thumbnails and other themes will be blank until you upload product media manually.
-   To fill Admin product media, unzip Zenv-10-Product-Images.zip and upload the matching PNG to each product.
+5. The corrected CSV supplies a public HTTPS PNG image URL, Image Position 1 and image alt text
+   for every product. Shopify can download the images during import. All ten URLs were checked.
+6. The theme also retains fallback images for these ten demo product handles if Shopify media
+   has not loaded yet. Uploaded product media takes priority. The matching images are also
+   available in Zenv-10-Product-Images.zip for manual upload if needed.
 7. Make a collection containing tag zenv-demo, then choose it in Customize > Featured collection if desired.
    Default product-count setting is ten. Selecting your own collection replaces the sample home catalogue.
 
