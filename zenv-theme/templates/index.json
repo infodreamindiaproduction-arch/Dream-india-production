@@ -1,0 +1,107 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {}
+    },
+    "categories": {
+      "type": "categories",
+      "settings": {},
+      "blocks": {
+        "cat0": {
+          "type": "category",
+          "settings": {
+            "title": "Lips",
+            "link": "/collections/lips"
+          }
+        },
+        "cat1": {
+          "type": "category",
+          "settings": {
+            "title": "Face",
+            "link": "/collections/face"
+          }
+        },
+        "cat2": {
+          "type": "category",
+          "settings": {
+            "title": "Eyes",
+            "link": "/collections/eyes"
+          }
+        },
+        "cat3": {
+          "type": "category",
+          "settings": {
+            "title": "Skin prep",
+            "link": "/collections/skin"
+          }
+        },
+        "cat4": {
+          "type": "category",
+          "settings": {
+            "title": "Brushes & tools",
+            "link": "/collections/brushes"
+          }
+        },
+        "cat5": {
+          "type": "category",
+          "settings": {
+            "title": "Value sets",
+            "link": "/collections/combos"
+          }
+        }
+      },
+      "block_order": [
+        "cat0",
+        "cat1",
+        "cat2",
+        "cat3",
+        "cat4",
+        "cat5"
+      ]
+    },
+    "featured": {
+      "type": "featured-products",
+      "settings": {}
+    },
+    "edits": {
+      "type": "beauty-edits",
+      "settings": {},
+      "blocks": {
+        "edit0": {
+          "type": "edit",
+          "settings": {
+            "eyebrow": "THE LIP WARDROBE",
+            "heading": "A shade for every side of you.",
+            "description": "From barely there to all eyes on you.",
+            "link": "/collections/lips"
+          }
+        },
+        "edit1": {
+          "type": "edit",
+          "settings": {
+            "eyebrow": "THE GLOW GUIDE",
+            "heading": "Good skin. Great energy.",
+            "description": "A fresh take on your everyday base.",
+            "link": "/collections/face"
+          }
+        }
+      },
+      "block_order": [
+        "edit0",
+        "edit1"
+      ]
+    },
+    "story": {
+      "type": "brand-story",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "categories",
+    "featured",
+    "edits",
+    "story"
+  ]
+}
