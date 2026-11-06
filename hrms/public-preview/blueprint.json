@@ -1,0 +1,32 @@
+{
+  "landingPage": "/?hrms_portal=1",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "6.8"
+  },
+  "login": false,
+  "features": {
+    "networking": false
+  },
+  "steps": [
+    {
+      "step": "installTheme",
+      "themeData": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/infodreamindiaproduction-arch/Dream-india-production/codex/hrms-wordpress-preview/hrms/public-preview/all-in-one-hrms.zip"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/mu-plugins/hrms-preview-mail.php",
+      "data": "<?php\n// Browser preview only: never deliver enquiry or account emails.\nadd_filter('pre_wp_mail', '__return_false');\n"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\nrequire '/wordpress/wp-load.php';\n$id=username_exists('hrms_admin');\nif(!$id)$id=wp_insert_user(array('user_login'=>'hrms_admin','user_pass'=>'CheckHRMS2026!','display_name'=>'HRMS Admin','role'=>'administrator'));\nif(is_wp_error($id))throw new Exception($id->get_error_message());\nwp_set_current_user($id);\ndip_company_install();\nlist($w,$raw)=dip_ref_read();\n$d=$w['data'];$d['co']['name']='Dream India Production';$d['co']['tag']='HR and Payroll';\n$d['brand']=dip_brand_validate(array_merge(dip_brand_defaults(),array('productName'=>'All in One HRMS','primary'=>'#16a34a','sidebar'=>'dark')));\n$r=dip_ref_commit($w,$raw,$d);if(is_wp_error($r))throw new Exception($r->get_error_message());\nupdate_option('blogname','All in One HRMS');\necho 'HRMS preview configured';\n"
+    }
+  ]
+}
