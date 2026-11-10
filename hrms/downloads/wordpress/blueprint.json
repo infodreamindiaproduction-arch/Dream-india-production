@@ -13,7 +13,7 @@
       "step": "installTheme",
       "themeData": {
         "resource": "url",
-        "url": "https://raw.githubusercontent.com/infodreamindiaproduction-arch/Dream-india-production/codex/hrms-wordpress-download/hrms/downloads/wordpress/All-in-One-HRMS-WordPress-7.5.0.zip"
+        "url": "https://raw.githubusercontent.com/infodreamindiaproduction-arch/Dream-india-production/codex/hrms-wordpress-download/hrms/downloads/wordpress/All-in-One-HRMS-WordPress-7.5.1.zip"
       },
       "options": {
         "activate": true
