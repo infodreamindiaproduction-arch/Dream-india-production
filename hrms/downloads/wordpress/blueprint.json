@@ -1,0 +1,32 @@
+{
+  "landingPage": "/?hrms_portal=1",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "6.8"
+  },
+  "login": false,
+  "features": {
+    "networking": false
+  },
+  "steps": [
+    {
+      "step": "installTheme",
+      "themeData": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/infodreamindiaproduction-arch/Dream-india-production/codex/hrms-wordpress-download/hrms/downloads/wordpress/All-in-One-HRMS-WordPress-7.5.0.zip"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/mu-plugins/hrms-preview-mail.php",
+      "data": "<?php\n// Browser preview only: never deliver enquiry or account emails.\nadd_filter('pre_wp_mail', '__return_false');\n"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\n// This file is embedded in the public Playground Blueprint, never in the theme.\n// These intentionally public accounts belong only to the isolated test site.\nrequire '/wordpress/wp-load.php';\n$admin = username_exists('hrms_admin');\nif (!$admin) {\n    $admin = wp_insert_user(array('user_login'=>'hrms_admin', 'user_pass'=>'CheckHRMS2026!', 'display_name'=>'HRMS Admin', 'role'=>'administrator'));\n}\nif (is_wp_error($admin)) { throw new Exception($admin->get_error_message()); }\nwp_set_current_user($admin);\ndip_company_install();\nlist($workspace, $raw) = dip_ref_read();\n$data = $workspace['data'];\n$data['co']['name'] = 'Dream India Production';\n$data['co']['tag'] = 'HR and Payroll';\n$data['brand'] = dip_brand_validate(array_merge(dip_brand_defaults(), array('productName'=>'All in One HRMS', 'primary'=>'#16a34a', 'sidebar'=>'dark')));\n$employeeId = null;\n$maxId = 1000;\nforeach ($data['emps'] as $employee) {\n    $maxId = max($maxId, (int)$employee['id']);\n    if ($employee['code'] === 'TEST001') { $employeeId = (int)$employee['id']; }\n}\nif ($employeeId === null) {\n    $employeeId = $maxId + 1;\n    $data['emps'][] = array('id'=>$employeeId, 'code'=>'TEST001', 'name'=>'Test Employee', 'dept'=>'Human Resources', 'des'=>'HR Executive', 'basic'=>15000, 'hra'=>5000, 'oth'=>0, 'pt'=>0, 'tds'=>0, 'pf'=>false, 'esi'=>false, 'doj'=>'2024-01-01', 'exit'=>'', 'ph'=>'');\n}\n$result = dip_ref_commit($workspace, $raw, dip_ref_validate($data, $workspace['data']));\nif (is_wp_error($result)) { throw new Exception($result->get_error_message()); }\n$user = username_exists('hrms_employee');\nif (!$user) {\n    $user = wp_insert_user(array('user_login'=>'hrms_employee', 'user_pass'=>'Employee2026!', 'display_name'=>'Test Employee', 'role'=>'dreampeople_employee'));\n}\nif (is_wp_error($user)) { throw new Exception($user->get_error_message()); }\nglobal $wpdb;\nlist($companies, $members) = dip_company_tables();\nif ($wpdb->replace($members, array('company_id'=>1, 'user_id'=>$user, 'role'=>'employee', 'employee_id'=>$employeeId), array('%d','%d','%s','%d')) === false) {\n    throw new Exception('Could not link the test employee account.');\n}\nupdate_user_meta($user, 'hrms_active_company', 1);\nupdate_option('blogname', 'All in One HRMS');\necho 'HRMS administrator and employee test logins configured';\n"
+    }
+  ]
+}
