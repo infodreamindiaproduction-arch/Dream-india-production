@@ -1,2 +1,3 @@
 05ed7273cdac4a562d599fb1558caa328f2c912c3780148f041a59dd7bcbd1d6  All-in-One-HRMS-WordPress-7.5.0.zip
 86fee8411f7af380b6e74d790f547f6668dde67cbf27d52742d128c8104de909  All-in-One-HRMS-WordPress-7.5.1.zip
+f88fe6d8a2087aabcbaf47b54784ca9902da44a9c560d23dc873a31e60002fa5  All-in-One-HRMS-WordPress-7.5.2.zip

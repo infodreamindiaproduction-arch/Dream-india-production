@@ -1,15 +1,15 @@
-# All in One HRMS WordPress 7.5.1
+# All in One HRMS WordPress 7.5.2
 
-Upload All-in-One-HRMS-WordPress-7.5.1.zip directly in WordPress: Appearance > Themes > Add New > Upload Theme, Install Now, Activate. Open your website and select Portal Login, or open /?hrms_portal=1. Your own WordPress Administrator is the HRMS Super Admin. The theme installs company tables/roles automatically with empty staff records. No separate database import or paid plugin is required. WordPress 6.0+ and PHP 8.1+ required; workflows tested on WordPress 6.8.3/PHP 8.3. Back up an existing website before switching its active theme.
+Install the ZIP directly in WordPress Appearance > Themes > Add New > Upload Theme, then Activate. Open /?hrms_portal=1 and use your own WordPress Administrator. New installations have no staff/attendance/payroll records. Upgrades preserve your existing data; create another company for a clean workspace.
 
-Includes Employee Logins & Progress after onboarding; Super Admin SaaS Clients & Licenses with company/admin creation, staff cap, manual fee and IST expiry/suspension; company logo on payslips/PDF/print with retained historical branding; company/employee identity headers; company-scoped records, branches, social/support settings, genuine PDF/CSV/Excel exports and Hindi/English UI. Printer setup belongs to the device; hosting mail/SMTP must be configured for actual enquiry delivery. No automatic payment collection, bank payouts or statutory filing is connected.
+Attendance: select Staff and Month, choose Date, then Mark Present or Mark Absent. The daily table Mark button selects its date. Status persists and updates salary while actual punches are retained. Finalised-month marking requires confirmation and retains old payslip revisions. Future/out-of-employment dates and unauthorised employee writes are rejected. Employee GPS self check-in remains separate and requires correct office location settings.
 
-The ZIP contains theme code/assets/licenses and installation readme only. It does not contain customer databases, production credentials, signing keys, Android source or fixture seed code. Real installation never creates the public test logins.
+Includes SaaS Clients & Licenses, post-onboarding employee logins, company branding/logo, branches, social/support settings, print, PDF/CSV/Excel and Hindi/English. Requires WordPress6.0+/PHP8.1+; tested WP6.8.3/PHP8.3. Configure host mail/SMTP for actual enquiry delivery. No automatic payment collection, bank transfer or statutory filing is connected.
 
-## Isolated browser preview
+## Fresh blank preview
 
-Use blueprint.json with WordPress Playground. Administrator: hrms_admin / CheckHRMS2026!; Employee: hrms_employee / Employee2026!. These are deliberately public test credentials. Each viewer gets an isolated browser PHP/WordPress/SQLite installation with one fictional employee; it is not the owner's permanent hosted website. Preview email delivery is disabled. Use test records only. The latest theme is 7.5.1; old preview/download links remain on their earlier versions.
+Use this directory's blueprint.json with WordPress Playground. It creates a fresh Dream India Production company with zero employees, attendance, payroll, leave and expense records. No employee test account or sample employee is seeded. Super Admin: hrms_admin / CheckHRMS2026!; Company Admin: company_admin / CompanyAdmin2026!. These are deliberately public preview credentials only; a real theme installation creates neither account. First add an employee, then mark attendance or create its login. Email delivery is disabled in this isolated browser preview. Each viewer has its own temporary WordPress/PHP/SQLite database; this is not shared/permanent hosting. Older previews and downloads are preserved separately.
 
-SHA256: 86fee8411f7af380b6e74d790f547f6668dde67cbf27d52742d128c8104de909
+The archive contains theme code/assets/install instructions only, no databases, production secrets, private keys, Android source or preview seed scripts.
 
-Patch 7.5.1 fixes long sidebar labels overlapping adjacent rows and the pending-login badge. Narrow desktop, enlarged text and mobile/tablet layouts verified.
+SHA256: f88fe6d8a2087aabcbaf47b54784ca9902da44a9c560d23dc873a31e60002fa5
